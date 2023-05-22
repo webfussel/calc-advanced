@@ -1,0 +1,83 @@
+@import url('/assets/font/seven_segment.css');
+
+:root {
+  --font: 'SevenSegment', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #202e3a;
+  font-family: var(--font);
+}
+
+h1 {
+  color: #dfe6e9;
+  font-weight: 400;
+}
+
+main,
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #34495e;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+header > span {
+    color: #dfe6e9;
+    text-align: right;
+}
+
+span#result {
+  font-size: 2rem;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 1rem;
+}
+
+button {
+  all: unset;
+  padding: .5rem 1.5rem;
+  background: #2d3436;
+  color: #dfe6e9;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transform: scale(var(--scale, 1));
+  transition: 250ms ease-in-out;
+}
+
+button:hover {
+  --scale: 1.1;
+}
+
+button.num {
+  background: #636e72;
+}
+
+button.op {
+  background: #0984e3;
+}
+
+button[data-operation="CALCULATE"] {
+  background: #e17055;
+  grid-column: 3 / -1;
+}
